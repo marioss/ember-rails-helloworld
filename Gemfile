@@ -1,10 +1,24 @@
 source 'https://rubygems.org'
 
+# Specify the Ruby version to enable the deploy to heroku instance
+ruby '2.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc2'
 
+# Use the 'puma' web server
+gem 'puma'
+
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+
+# Heroku Deployment
+group :production do
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+  gem 'rails_log_stdout', github: 'heroku/rails_log_stdout'
+end
+
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc2'
