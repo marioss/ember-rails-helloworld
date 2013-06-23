@@ -13,4 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require moment
+//= require showdown
+//= require_self
+//= require railsonmaui
+
+App = Ember.Application.create();
+
 //= require_tree .
