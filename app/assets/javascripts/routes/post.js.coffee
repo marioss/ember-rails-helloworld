@@ -5,8 +5,11 @@ App.PostsRoute = Ember.Route.extend(
     @render('post/list')
 )
 
-App.PostsNewRoute = Ember.Route.extend(model: ->
-  App.Post.createRecord(publishedAt: new Date(), author: "current user")
+App.PostsNewRoute = Ember.Route.extend(
+  model: ->
+    App.Post.createRecord(publishedAt: new Date(), author: "current user")
+  renderTemplate: ->
+    @render('post/new')
 )
 
 
