@@ -5,4 +5,5 @@ App.PostController = Ember.ObjectController.extend(
 
   doneEditing: ->
     @set "isEditing", false
+    @get('store').commit()
 )
