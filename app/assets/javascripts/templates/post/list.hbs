@@ -8,9 +8,11 @@
           {{#linkTo "posts.new" class="btn"}}Add Post{{/linkTo}}
         </th></tr>
         </thead>
-        {{#each model}}
+        {{#each post in filteredContent}}
         <tr><td>
-          {{#linkTo 'post' this}}{{title}} <small class='muted'>by {{author}}</small>{{/linkTo}}
+          {{#linkTo post post}}{{post.title}}
+          <small class='muted'>by {{post.author}}</small>
+          {{/linkTo}}
         </td></tr>
         {{/each}}
       </table>

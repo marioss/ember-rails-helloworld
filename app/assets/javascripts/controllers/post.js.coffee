@@ -1,3 +1,13 @@
+App.PostsController = Ember.ArrayController.extend(
+  sortProperties: [ "id" ]
+  sortAscending: false
+  filteredContent: (->
+    content = @get("arrangedContent")
+    content.filter (item, index) ->
+      not (item.get("isNew"))
+  ).property("arrangedContent.@each")
+)
+
 App.PostController = Ember.ObjectController.extend(
   isEditing: false
   edit: ->
